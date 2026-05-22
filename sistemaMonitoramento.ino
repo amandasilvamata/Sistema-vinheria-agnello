@@ -1,3 +1,10 @@
+// Integrantes:
+// Amanda Silva da Mata 
+// Beatriz Mantovani
+// Gustavo Ducatti
+// Laura Sampaio
+
+
 #include <DHT.h>
 #include <LiquidCrystal_I2C.h>
 
