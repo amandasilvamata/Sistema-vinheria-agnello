@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "author": "Laura Sampaio Neves",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard",
+      "id": "bb1",
+      "top": 6.6,
+      "left": 252.4,
+      "attrs": { "color": "#eeefed" }
+    },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -9, "left": -231, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 313.6,
+      "left": 34.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -93.6,
+      "left": 145.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 339.2,
+      "left": 576.8,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 82.8, "left": 320.6, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 128.75,
+      "left": 345.6,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 82.8,
+      "left": 407,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 128.75,
+      "left": 432,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 128.75,
+      "left": 518.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 82.8,
+      "left": 493.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 9.9,
+      "left": 801,
+      "attrs": { "temperature": "-9.2", "humidity": "18.5" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 128.75,
+      "left": 768,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:SDA", "uno:A4.2", "green", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "green", [ "h0" ] ],
+    [ "uno:5V", "bb1:bp.1", "red", [ "v0" ] ],
+    [ "uno:GND.2", "bb1:bn.1", "black", [ "v0" ] ],
+    [ "bb1:bp.2", "lcd1:VCC", "red", [ "v47.1", "h-250.4", "v96" ] ],
+    [ "bb1:bn.3", "lcd1:GND", "black", [ "v56.3", "h-240.8", "v67.2", "h28.8" ] ],
+    [ "bb1:14b.i", "uno:10", "cyan", [ "v316.8", "h-643.2", "v-518.4", "h201.6", "v38.4" ] ],
+    [ "bb1:16b.i", "bb1:bn.12", "black", [ "v0" ] ],
+    [ "bb1:23b.i", "uno:9", "cyan", [ "v336", "h-758.4", "v-547.2", "h9.6" ] ],
+    [ "bb1:25b.i", "bb1:bn.20", "black", [ "v0" ] ],
+    [ "bb1:32b.i", "uno:8", "cyan", [ "v355.2", "h-873.6", "v-576", "h278.4" ] ],
+    [ "bb1:7b.i", "bb1:bn.5", "black", [ "v0" ] ],
+    [ "bb1:bp.27", "ldr1:VCC", "red", [ "v85.5", "h8.8" ] ],
+    [ "bb1:bn.28", "ldr1:GND", "black", [ "v65.9", "h191.2", "v86.4" ] ],
+    [ "ldr1:AO", "uno:A0", "orange", [ "h19.2", "v181.7", "h-796.8", "v-383.9" ] ],
+    [ "bb1:bn.8", "bz1:1", "black", [ "v75.5", "h-183.2" ] ],
+    [ "bz1:2", "uno:11", "violet", [ "v19.2", "h-134.8", "v-28.8", "h-134.4" ] ],
+    [ "bb1:bn.49", "bb1:60b.h", "black", [ "v0" ] ],
+    [ "bb1:bp.46", "bb1:57b.j", "red", [ "v0" ] ],
+    [ "bb1:bp.42", "bb1:52b.i", "red", [ "v0" ] ],
+    [ "uno:2", "bb1:58b.j", "blue", [ "v-115.2", "h935.3", "v345.6", "h-115.2" ] ],
+    [ "r1:1", "bb1:8b.g", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:14b.g", "", [ "$bb" ] ],
+    [ "r2:1", "bb1:17b.g", "", [ "$bb" ] ],
+    [ "r2:2", "bb1:23b.g", "", [ "$bb" ] ],
+    [ "r3:1", "bb1:26b.g", "", [ "$bb" ] ],
+    [ "r3:2", "bb1:32b.g", "", [ "$bb" ] ],
+    [ "r5:1", "bb1:52b.g", "", [ "$bb" ] ],
+    [ "r5:2", "bb1:58b.g", "", [ "$bb" ] ],
+    [ "dht1:VCC", "bb1:57b.f", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:58b.f", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:59b.f", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:60b.f", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:8b.f", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:7b.f", "", [ "$bb" ] ],
+    [ "led2:A", "bb1:17b.f", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:16b.f", "", [ "$bb" ] ],
+    [ "led3:A", "bb1:26b.f", "", [ "$bb" ] ],
+    [ "led3:C", "bb1:25b.f", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
